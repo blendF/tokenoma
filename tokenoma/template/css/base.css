@@ -24,8 +24,25 @@
 /*---
   00. Presets
 ---*/
-@import url(https://fonts.googleapis.com/css?family=Work+Sans:400,500,300);
-@import url(https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,700);
+/* @import url(https://fonts.googleapis.com/css?family=Work+Sans:400,500,300); */
+/* @import url(https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,700); */
+/* @font-face {
+  font-family: 'Codec Pro';
+  src: url(/fonts/CodecPro-Regular.ttf) format('truetype'),
+       url(/fonts/CodecPro-Regular.ttf) format('woff');
+  font-weight: normal;
+  font-style: normal;
+} */
+
+@font-face {
+  font-family: 'Codec Pro';
+  src: url(/fonts/CodecPro-Regular.ttf) format('truetype'),
+       url(/fonts/CodecPro-Regular.ttf) format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@import url(https://fonts.googleapis.com/css2?family=Codec+Pro:wght@300;400;700&display=swap);
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -53,13 +70,15 @@ a:focus, a:active, a:hover, textarea:focus, textarea:active, textarea:hover, inp
   02. Typography
 ---*/
 body {
-  font-family: "Roboto Mono", "Helvetica Neue", sans-serif;
+  font-family: 'Codec Pro', sans-serif;
   font-weight: 300;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Work Sans", "Helvetica Neue", sans-serif;
+  font-family: 'Codec Pro', sans-serif;
 }
+
+
 
 @media screen and (max-width: 768px) {
   h1 {
@@ -80,15 +99,18 @@ p a, .copyright a {
 
 h1 {
   font-size: 3em;
+  font-family: 'Codec Pro', sans-serif;
 }
 
 h2 {
-  font-family: "Roboto Mono", "Helvetica Neue", sans-serif;
+  font-family: 'Codec Pro', sans-serif;
+  /* font-family: "Roboto Mono", "Helvetica Neue", sans-serif; */
   font-size: 2.2em;
   margin: 10px 0 25px;
 }
 
 h3 {
+  font-family: 'Codec Pro', sans-serif;
   font-size: 1.7em;
   margin-top: 0;
 }
@@ -96,15 +118,18 @@ h3 {
 h4 {
   font-size: 1.3em;
   margin-bottom: 10px;
-  font-family: "Roboto Mono", "Helvetica Neue", sans-serif;
+  font-family: 'Codec Pro', sans-serif;
+  /* font-family: "Roboto Mono", "Helvetica Neue", sans-serif; */
 }
 
 h5 {
+  font-family: 'Codec Pro', sans-serif;
   text-transform: uppercase;
   font-size: 1em;
 }
 
 h6 {
+  font-family: 'Codec Pro', sans-serif;
   font-size: 1em;
 }
 
