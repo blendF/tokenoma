@@ -69,6 +69,9 @@ a:focus, a:active, a:hover, textarea:focus, textarea:active, textarea:hover, inp
 /*---
   02. Typography
 ---*/
+html {
+  scroll-behavior: smooth;
+}
 body {
   font-family: 'Codec Pro', sans-serif;
   font-weight: 300;
@@ -2875,4 +2878,207 @@ Made by Themanoid
   right: 0;
   text-align: center;
   padding: 20px;
+}
+
+/* Footer and Pricing style change */
+footer {
+  margin-bottom: -15%;
+}
+#contactus {
+  margin-bottom: 10%;
+}
+.pricing {
+  margin-bottom: 5%;
+}
+
+#contactus .form-control:focus {
+  background-color: #8864cc;
+  border-color: #8864cc;
+  box-shadow: none;
+  color: #fff;
+}
+
+/* Gift test 1*/
+.gift {
+  margin-bottom: 10%;
+  /* margin-left: -10%; */
+}
+
+/* Gift test 2*/
+
+.box {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Ensure the container takes full viewport height */
+}
+
+/* Adjust the size of the gift box */
+.box::before {
+  content: "";
+  width: 300px; /* Smaller size */
+  height: 300px; /* Smaller size */
+  background-color: #8864cc; /* Changed to Tokenoma color */
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.5); /* Added more shadow */
+}
+
+.box-body {
+  position: relative;
+  height: 150px; /* Smaller size */
+  width: 150px; /* Smaller size */
+  margin-top: 100px; /* Adjusted for centering */
+  background-color: #8864cc; /* Changed to Tokenoma color */
+  border-bottom-left-radius: 5%;
+  border-bottom-right-radius: 5%;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5); /* Added more shadow */
+}
+
+.box-body .img {
+  opacity: 0;
+  transform: translateY(0%);
+  transition: all 0.5s;
+  margin: 0 auto;
+  display: block;
+}
+
+.box-body:hover {
+  cursor: pointer;
+  animation: box-body 1s forwards ease-in-out;
+}
+
+.box-body:hover .img {
+  opacity: 1;
+  z-index: 0;
+  transform: translateY(-157px);
+}
+
+.box-body:hover .box-lid {
+  animation: box-lid 1s forwards ease-in-out;
+}
+
+.box-body:hover .box-bowtie::before {
+  animation: box-bowtie-left 1.1s forwards ease-in-out;
+}
+
+.box-body:hover .box-bowtie::after {
+  animation: box-bowtie-right 1.1s forwards ease-in-out;
+}
+
+.box-body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  background-color: #ffefa0; /* Light color for the ribbon */
+}
+
+.box-lid {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 90%;
+  height: 30px; /* Smaller lid */
+  background-color: #8864cc; /* Changed to Tokenoma color */
+  width: 160px; /* Smaller lid */
+  border-radius: 5%;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.4); /* Added more shadow */
+}
+
+.box-lid::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  background-color: #ffefa0; /* Light color for the ribbon */
+}
+
+.box-bowtie {
+  z-index: 1;
+  height: 100%;
+}
+
+.box-bowtie::before,
+.box-bowtie::after {
+  content: "";
+  width: 83.3333333333px;
+  height: 83.3333333333px;
+  border: 16.6666666667px solid #ffffff; /* Changed to match the gift color */
+  border-radius: 50% 50% 0 50%;
+  position: absolute;
+  bottom: 99%;
+  z-index: -1;
+}
+
+.box-bowtie::before {
+  left: 50%;
+  transform: translateX(-100%) skew(10deg, 10deg);
+}
+
+.box-bowtie::after {
+  left: 50%;
+  transform: translateX(0%) rotate(90deg) skew(10deg, 10deg);
+}
+
+/* Animations */
+@keyframes box-lid {
+  0%, 42% {
+    transform: translate3d(-50%, 0%, 0) rotate(0deg);
+  }
+  60% {
+    transform: translate3d(-85%, -230%, 0) rotate(-25deg);
+  }
+  90%, 100% {
+    transform: translate3d(-119%, 225%, 0) rotate(-70deg);
+  }
+}
+
+@keyframes box-body {
+  0% {
+    transform: translate3d(0%, 0%, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate3d(0%, 25%, 0) rotate(20deg);
+  }
+  50% {
+    transform: translate3d(0%, -15%, 0) rotate(0deg);
+  }
+  70% {
+    transform: translate3d(0%, 0%, 0) rotate(0deg);
+  }
+}
+
+@keyframes box-bowtie-right {
+  0%, 50%, 75% {
+    transform: translateX(0%) rotate(90deg) skew(10deg, 10deg);
+  }
+  90%, 100% {
+    transform: translate(-50%, -15%) rotate(45deg) skew(10deg, 10deg);
+    box-shadow: 0px 4px 8px -4px rgba(0, 0, 0, 0.3);
+  }
+}
+
+@keyframes box-bowtie-left {
+  0% {
+    transform: translateX(-100%) rotate(0deg) skew(10deg, 10deg);
+  }
+  50%, 75% {
+    transform: translate(-50%, -15%) rotate(45deg) skew(10deg, 10deg);
+  }
+  90%, 100% {
+    transform: translateX(-100%) rotate(0deg) skew(10deg, 10deg);
+  }
 }
